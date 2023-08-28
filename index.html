@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>facebook campaign website</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h3>Welcome to facebook campaign integration website</h3>
+    <script>
+        $(document).ready(function () {
+            var fullURL = window.location.href;
+            var startIndex = fullURL.indexOf("code=");
+            if (startIndex !== -1) {
+               
+                var endIndex = fullURL.indexOf("&", startIndex);
+                if (endIndex === -1) {
+                    endIndex = fullURL.length;
+                }
+                var code = fullURL.substring(startIndex + 5, endIndex);
+                code = decodeURIComponent(code);
+                console.log("Extracted code:", code);
+            } else {
+                console.log("Code parameter not found in URL.");
+            }
+        });
+    </script>
+</body>
