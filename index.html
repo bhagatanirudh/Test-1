@@ -18,8 +18,6 @@
                 var code = fullURL.substring(startIndex + 5, endIndex);
                 code = decodeURIComponent(code);
                 console.log("Extracted code:", code);
-                localStorage.setItem("code", code);
-                window.open("http://localhost:8080/sunbase/index4.jsp?page=modules/plugins/integrations/facebook/integrations_facebook.jsp");
             } else {
                 console.log("Code parameter not found in URL.");
             }
